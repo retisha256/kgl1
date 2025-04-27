@@ -104,9 +104,9 @@ class Sales(models.Model):
 #credit table      
 class Credit(models.Model):
     buyer_name=models.CharField(max_length=255)
-    NIN=models.IntegerField(unique=True)
-    location=models.IntegerField(default=35)
-    contact =models.DateTimeField(default=20)
+    NIN=models.CharField(unique=True)
+    location=models.CharField(max_length=25,default=35)
+    contact =models.IntegerField(default=20)
     amount_due=models.IntegerField(default=False)
     due_date=models.DateTimeField(auto_now_add=True)
     product_name=models.ForeignKey(Stock, on_delete=models.CASCADE,null=True)

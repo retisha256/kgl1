@@ -1,31 +1,102 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory System Sidebar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-    
-      
+    <title>Karibu Groceries Limited</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f4f4; /* Light background for the whole page */
+            color: #333; /* Default text color */
+        }
+
+        .sidenav {
+            width: 220px; /* Slightly wider sidebar */
+            background-color: #343a40; /* Dark background for sidebar */
+            color: #fff; /* White text for sidebar */
+            padding-top: 20px;
+            border-right: 1px solid #555;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .sidenav a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #ddd;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: left;
+            box-sizing: border-box;
+            border-bottom: 1px solid #555; /* Separator between links */
+        }
+
+        .sidenav a:last-child {
+            border-bottom: none; /* Remove border from the last link */
+        }
+
+        .sidenav a:hover {
+            background-color: #495057; /* Slightly lighter dark on hover */
+            color: #007bff; /* Highlight color on hover */
+        }
+        .content table td,
+  .content table th {
+  padding: 8px; /* Adjust this value as needed */
+  }
+
+        .content {
+            flex-grow: 1;
+            padding: 2px;
+            background-color: #fff; /* White background for content area */
+        }
+
+        .content h1 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* You can add more global content styles here if needed */
+
+    </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h1>KGL</h1>
-        <ul>
-            <li><a href="#"><i data-feather="shopping-cart"></i> All Sales</a></li>
-            <li><a href="#"><i data-feather="package"></i> All Stock</a></li>
-            <li><a href="#"><i data-feather="credit-card"></i> Credit</a></li>
-            <li><a href="#"><i data-feather="file-text"></i> Receipt</a></li>
-            <li><a href="#"><i data-feather="log-out"></i> Logout</a></li>
-        </ul>
+    
+    <div class="sidenav">
+        <h2>KGL</h2>
+        <a href="#">Dashboard</a>
+        
+        <a href="/allsales/">All Sales</a>
+        <a href="/allstock/">All stock</a>
+        <a href="/receipts/">Receipts</a>
+        </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
     </div>
-   
-    <script>
-        feather.replace();
-    </script>
+
+    <footer style="text-align: center; padding: 10px; background-color: #f0f0f0; border-top: 1px solid #ccc; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2025 Karibu Groceries Limited- Made by Tisha</p>
+    </footer>
+
 </body>
 </html>
