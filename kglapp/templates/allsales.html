@@ -1,0 +1,47 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'allsales.css' %}">
+    
+
+    
+</head>
+<body>
+         
+    
+    {% block content %}
+    <h1>Table for sales</h1>
+    <table>
+        <thead>
+            <tr>
+            <th>Product name</th>
+            <th>Quantity</th>
+            <th>Sales Agent</th>
+            <th>Customer name</th>
+         
+        </tr>
+        {% for sale in sales %}
+        </thead>
+        <tbody>
+            <tr>
+            <td>{{ sale.product_name }}</td>
+            <td>{{ sale.tonnage }}</td>
+            <td>{{ sale.salesagent_name }}</td>
+            <td>{{ sale.buyers_name }}</td>
+            >
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+    {% endblock %}    
+    
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="card">
+        <div class="card_header">
+            <h1 class="text-center">Order-Summary</h1>
+            <br>
+            <h2 class="lead">Customer name: {{ receipt.buyers_name }}</h2>
+            
+
+        </div>
+        <div class="card-block">
+            <div class="table-responsive">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <td><strong>Item-name</strong></td>
+                            <td class="text-xs-center"><strong>Item Quantity</strong></td>
+
+                            <td class="text-xs-right"><strong>Total Bill</strong></td>
+                            <td class="text-xs-right"><strong>Amount Paid</strong></td>
+                            <td class="text-xs-right">Total Change</td>
+    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ receipt.product_name }}</td>
+                            <td class="text-xs-right">{{ receipt.get_total }}}</td>
+                            <td class="text-xs-right">{{ receipt.amount_received }}</td>
+                            <td class="text-xs-right">{{ receipt.get_total }}</td>
+                            <td class="text-xs-right">{{ receipt.get_change }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}
+</body>
+</html>

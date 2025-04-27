@@ -1,0 +1,43 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    
+    {% block content %}
+    <h1>Table for stock</h1>
+    <table border="1">
+        <thead>
+            <tr>
+            <th>Product name</th>
+            <th>Tonnage</th>
+            <th>Cost</th>
+        
+            <th>supplier</th>
+            <th>Action</th>
+            
+        </tr>
+        {% for stock in stocks %}
+        </thead>
+        <tbody>
+            <tr>
+            <td>{{ stock.name_of_produce }}</td>
+            <td>{{ stock.tonnage }}</td>
+            <td>{{ stock.cost }}</td>
+            <td>{{ stock.name_of_dealer }}</td>
+            <td><a href="{% url 'detail' stock.id %}"><input type="submit" value ="Checkout Item"></a></td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+    {% endblock %}    
+    
+</body>
+</html>

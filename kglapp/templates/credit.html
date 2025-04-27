@@ -1,0 +1,46 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+
+    
+
+<body>
+         
+    
+{% block content %}
+    <h1>Credit table</h1>
+    <table>
+        <thead>
+            <tr>
+            <th>Product name</th>
+            <th>Quantity</th>
+            <th>Sales Agent</th>
+            <th>Customer name</th>
+         
+        </tr>
+        {% for credit in credit %}
+        </thead>
+        <tbody>
+            <tr>
+            <td>{{ credit.buyer_name }}</td>
+            <td>{{ credit.NIN }}</td>
+            <td>{{ credit.product_name}}</td>
+            <td>{{ credit.Dispatch_date }}</td>
+            >
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+{% endblock %}    
+    
+
+</body>
+</html>
